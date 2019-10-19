@@ -1,19 +1,22 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>college management system</title>
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css');?>"/>
-	<script src="<?php echo base_url('assets/js/jquery-3.1.0.js');?>"></script>
-	<script src="<?php echo base_url('assets/js/bootstrap.js'); ?>"></script>
-</head>
-<body>
+<?php include("inc/header.php"); ?>
+<div class="container">
+	<div class="jumbotron">
+		<h2 class="display-3 text-center">ADMIN & Co ADMIN LOGIN</h2>
+		<hr>
+		<div class="my-4">
+			<div class="row">
+				<?php if($chkAdminExist): ?>
 
-<div id="container">
-	<h2>Welcome to college management system </h2>
+				<?php else: ?>
+					<div class="col-lg-4">
+						<?php  echo anchor("welcome/adminRegister", "ADMIN REGISTER", ['class' => 'btn btn-primary']);?>
+					</div>
+				<?php endif; ?>
+				<div class="col-lg-4">
+					<?php  echo anchor("welcome/login", "ADMIN LOGIN", ['class' => 'btn btn-primary']);?>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-</body>
-</html>
+<?php include("inc/footer.php"); ?>
